@@ -20,18 +20,15 @@ namespace server {
         public BookDto GetBookById(int bookId) {
 
             BookDto foundBook = null;
-            GetConnection().Query<BookDto, AuthorDto, GenreDto, BookDto>(@"with cte(BOOK_ID, NAME, PRICE, PUBLISHER, DESCRIPTION) as (
-    SELECT TOP(1) b.BOOK_ID as id, b.NAME as Title, b.PRICE, b.PUBLISHER, b.DESCRIPTION FROM Books b
-WHERE b.BOOK_ID = @bookId
-)
-SELECT b.BOOK_ID as id, b.NAME as Title, b.PRICE, b.PUBLISHER, b.DESCRIPTION,
+            GetConnection().Query<BookDto, AuthorDto, GenreDto, BookDto>(@"SELECT b.BOOK_ID as id, b.NAME as Title, b.PRICE, b.PUBLISHER, b.DESCRIPTION,
        A.AUTHOR_ID as Id, A.NAME,
        G.GENRE_ID as Id, G.NAME
-FROM cte b
+FROM Books b
 LEFT JOIN dbo.BookAuthor BA on b.BOOK_ID = BA.BOOK_ID
 LEFT JOIN dbo.Authors A on A.AUTHOR_ID = BA.AUTHOR_ID
 LEFT JOIN dbo.BookGenre BG on b.BOOK_ID = BG.BOOK_ID
-LEFT JOIN dbo.Genres G on bg.GENRE_ID = G.GENRE_ID",
+LEFT JOIN dbo.Genres G on bg.GENRE_ID = G.GENRE_ID
+WHERE b.BOOK_ID = @bookId",
                 ((book, author, genre) => {
                     if (foundBook == null) {
                         foundBook = book;
