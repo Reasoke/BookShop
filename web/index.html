@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>BookShop</h1>
+    </header>
+    <main>
+      <table id="booksTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>Видавництво</th>
+            <th>Опис</th>
+            <th>Автор</th>
+            <th>Жанр</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные через JS -->
+        </tbody>
+      </table>
+
+      <div id="updateSection">
+        <input type="text" id="genreInput" placeholder="Введіть жанр для оновлення" />
+        <button id="updateButton">Оновити опис</button>
+        <p id="updateResult"></p>
+      </div>
+
+      <div id="authorsCountSection">
+        <input type="text" id="regionInput" placeholder="Введіть регіон для підрахунку авторів" />
+        <button id="authorsCountButton">Підрахувати кількість авторів</button>
+        <p id="authorsCountResult"></p>
+      </div>
+
+      <div id="booksBySalesSection">
+        <input type="text" id="salesInput" placeholder="Введіть мінімальну кількість продаж" />
+        <button id="salesCountButton">Отримати книги</button>
+        <table id="salesBooksTable">
+          <thead>
+            <tr>
+              <th>Назва</th>
+              <th>Кількість продажів</th>
+              <th>Видавництво</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Данные через JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="addAuthorSection">
+        <input type="text" id="bookInput" placeholder="Введіть ID книги" />
+        <input type="text" id="authorIdInput" placeholder="Введіть ID автора" />
+        <button id="addAuthorButton">Додати автора до книги</button>
+        <p id="addAuthorResult"></p>
+      </div>
+
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

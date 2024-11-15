@@ -1,0 +1,131 @@
+html,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #4c96af;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  flex: 1;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background: #4c96af;
+  color: white;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#updateSection,
+#authorsCountSection,
+#booksBySalesSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#genreInput,
+#regionInput,
+#salesInput {
+  padding: 8px;
+  width: 250px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#updateButton,
+#authorsCountButton,
+#salesCountButton {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#updateButton:hover,
+#authorsCountButton:hover,
+#salesCountButton:hover {
+  background-color: #555;
+}
+
+#updateResult,
+#authorsCountResult {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+#addAuthorSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#bookInput,
+#authorIdInput {
+  padding: 8px;
+  width: 250px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#addAuthorButton {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#addAuthorButton:hover {
+  background-color: #555;
+}
+
+#addAuthorResult {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
